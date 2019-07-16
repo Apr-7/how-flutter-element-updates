@@ -42,8 +42,8 @@ class _PositionedTilesState extends State<PositionedTiles> {
     super.initState();
   }
 
-  void swapTiles(){
-    this.setState((){
+  void swapTiles() {
+    this.setState(() {
       tiles.insert(1, tiles.removeAt(0));
     });
   }
@@ -57,9 +57,9 @@ class _PositionedTilesState extends State<PositionedTiles> {
         title: Text(widget.title),
       ),
       body: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: tiles,
-        ),
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: tiles,
+      ),
       floatingActionButton: FloatingActionButton(
         onPressed: swapTiles,
         tooltip: 'Increment',
@@ -74,17 +74,18 @@ class StatelessColorfulTile extends StatelessWidget {
   StatelessColorfulTile(this.color);
   @override
   Widget build(BuildContext context) {
-    return Column(children: <Widget>[
-      Container(
-        width: 100,
-        height: 100,
-        child: DecoratedBox(
-          decoration: BoxDecoration(
-            color: color,
+    return Column(
+      children: <Widget>[
+        Container(
+          width: 100,
+          height: 100,
+          child: DecoratedBox(
+            decoration: BoxDecoration(
+              color: color,
+            ),
           ),
         ),
-      ),
-    ],);
+      ],
+    );
   }
-
 }

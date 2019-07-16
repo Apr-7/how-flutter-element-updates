@@ -26,9 +26,11 @@ class _PositionedTilesState extends State<PositionedTiles> {
 
   @override
   void initState() {
-    // flutter's element-to-widget matching algorithm looks at one level of tree at a time
-    // since it can't find a tile element at that level with that key value, it creats a new one
-    // and initializes a new state
+    // flutter's element-to-widget matching algorithm looks at one level of tree at a time, at first level of children (padding widget), everyting matchs up correctly
+    // at the second level Flutter notices that the key of the tile element doesn't match the key of the widget, SO it deactivates that tile element, droppting those connections.
+    // it creates a new one and initializes a new state
+    // when matching up widgets to elements, Flutter only looks for a key that matches within a particular level in the tree.
+
     tiles = [
       Padding(
         padding: EdgeInsets.all(10.0),
